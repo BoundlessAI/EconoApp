@@ -42,6 +42,8 @@
 		81FE5F511ED4ECEC00F29312 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5F501ED4ECEC00F29312 /* CircularTransition.swift */; };
 		81FE5F551ED4F45E00F29312 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5F541ED4F45E00F29312 /* UIViewController+Extensions.swift */; };
 		81FE5F571ED4F55200F29312 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE5F561ED4F55200F29312 /* UIImage+Extensions.swift */; };
+		84BE692E2175C27700289D4D /* Sesame.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BE692D2175C27700289D4D /* Sesame.plist */; };
+		84BE69302175C28100289D4D /* Sesame+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE692F2175C28100289D4D /* Sesame+Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		81FE5F501ED4ECEC00F29312 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		81FE5F541ED4F45E00F29312 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		81FE5F561ED4F55200F29312 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		84BE692D2175C27700289D4D /* Sesame.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Sesame.plist; path = ../../keys/EconoApp/Sesame.plist; sourceTree = "<group>"; };
+		84BE692F2175C28100289D4D /* Sesame+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sesame+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,7 @@
 			children = (
 				810788981EF099E000A1B8E0 /* EconoApp.entitlements */,
 				818C75681ED3FE41006FA2E2 /* AppDelegate.swift */,
+				84BE692F2175C28100289D4D /* Sesame+Utilities.swift */,
 				816DD8911ED5D8C500CCB12F /* Model */,
 				816DD8931ED5D8EC00CCB12F /* View */,
 				816DD8941ED5D8F200CCB12F /* Controller */,
@@ -213,6 +218,7 @@
 				818C756F1ED3FE41006FA2E2 /* Assets.xcassets */,
 				818C75711ED3FE41006FA2E2 /* LaunchScreen.storyboard */,
 				818C75741ED3FE41006FA2E2 /* Info.plist */,
+				84BE692D2175C27700289D4D /* Sesame.plist */,
 				8144CB371EFC5090001952D7 /* Localizable.strings */,
 			);
 			path = EconoApp;
@@ -320,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BE692E2175C27700289D4D /* Sesame.plist in Resources */,
 				818C75731ED3FE41006FA2E2 /* LaunchScreen.storyboard in Resources */,
 				8144CB391EFC5090001952D7 /* Localizable.strings in Resources */,
 				818C75701ED3FE41006FA2E2 /* Assets.xcassets in Resources */,
@@ -357,6 +364,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Planet/Planet.framework",
+				"${BUILT_PRODUCTS_DIR}/Sesame/Sesame.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Timepiece/Timepiece.framework",
 			);
@@ -365,6 +373,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Planet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sesame.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Timepiece.framework",
 			);
@@ -402,6 +411,7 @@
 				81BBE23B1ED48FD900F6E736 /* SidraAPI.swift in Sources */,
 				81FE5F4B1ED4D35500F29312 /* HomeMenuTableViewCell.swift in Sources */,
 				81FE5F551ED4F45E00F29312 /* UIViewController+Extensions.swift in Sources */,
+				84BE69302175C28100289D4D /* Sesame+Utilities.swift in Sources */,
 				81F9BE761ED6216400A570C7 /* UILabel+Extensions.swift in Sources */,
 				81FE5F4D1ED4DAB200F29312 /* UIColor+Extensions.swift in Sources */,
 				81F9BE781ED6243500A570C7 /* GDPPerCapitaViewController.swift in Sources */,

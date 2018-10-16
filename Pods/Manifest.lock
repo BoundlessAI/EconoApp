@@ -5,6 +5,7 @@ PODS:
   - Charts/Core (3.0.2)
   - OneSignal (2.5.4)
   - Planet (0.2.1)
+  - Sesame (0.1.1)
   - SwiftyJSON (3.1.4)
   - Timepiece (1.2.0)
 
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - Charts
   - OneSignal
   - Planet
+  - Sesame
   - SwiftyJSON
   - Timepiece
 
@@ -22,6 +24,7 @@ SPEC REPOS:
     - Charts
     - OneSignal
     - Planet
+    - Sesame
     - SwiftyJSON
     - Timepiece
 
@@ -30,9 +33,10 @@ SPEC CHECKSUMS:
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   OneSignal: da994bcf6a2efbdceaf71e389e1d05245c562899
   Planet: d1e50cda481a5215e4beb40b0ef825edcea47aea
+  Sesame: dce2d9405d2565ef728e18c452499221902edeb3
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   Timepiece: d07900e985af4911f09146f1175fdbec37944836
 
-PODFILE CHECKSUM: 3b5f12a5e91c8d5671d4639f2a6a7aa7cc32cb6d
+PODFILE CHECKSUM: 864e50be322d071619748d5c745fd1f99d393588
 
 COCOAPODS: 1.5.3

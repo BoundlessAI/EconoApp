@@ -13,5 +13,6 @@ target 'EconoApp' do
 	pod 'Timepiece'
 	pod 'Charts'
 	pod 'Planet'
+    pod 'Sesame'
 	
 end

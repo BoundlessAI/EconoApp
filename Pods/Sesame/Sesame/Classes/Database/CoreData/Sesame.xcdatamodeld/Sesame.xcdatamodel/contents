@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="Sesame">
+    <entity name="BMSAppState" representedClassName="BMSAppState" syncable="YES">
+        <attribute name="appId" attributeType="String" syncable="YES"/>
+        <attribute name="auth" attributeType="String" syncable="YES"/>
+        <attribute name="configId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="effectDetails" attributeType="String" defaultValueString="{}" syncable="YES"/>
+        <attribute name="revision" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="trackingEnabled" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="versionId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BMSUser" inverseName="appState" inverseEntity="BMSUser" syncable="YES"/>
+    </entity>
+    <entity name="BMSCartridge" representedClassName="BMSCartridge" syncable="YES">
+        <attribute name="actionId" attributeType="String" syncable="YES"/>
+        <attribute name="cartridgeId" attributeType="String" syncable="YES"/>
+        <attribute name="ttl" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="utc" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="reinforcements" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="BMSReinforcement" inverseName="cartridge" inverseEntity="BMSReinforcement" syncable="YES"/>
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="BMSUser" inverseName="cartridges" inverseEntity="BMSUser" syncable="YES"/>
+    </entity>
+    <entity name="BMSEvent" representedClassName="BMSEvent" syncable="YES">
+        <attribute name="metadata" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sessionId" optional="YES" attributeType="Integer 64" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timezoneOffset" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="utc" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="reinforcement" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="BMSReinforcement" inverseName="event" inverseEntity="BMSReinforcement" syncable="YES"/>
+        <relationship name="report" maxCount="1" deletionRule="Cascade" destinationEntity="BMSReport" inverseName="events" inverseEntity="BMSReport" syncable="YES"/>
+    </entity>
+    <entity name="BMSReinforcement" representedClassName="BMSReinforcement" syncable="YES">
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="idx" optional="YES" attributeType="Integer 32" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="cartridge" maxCount="1" deletionRule="Nullify" destinationEntity="BMSCartridge" inverseName="reinforcements" inverseEntity="BMSCartridge" syncable="YES"/>
+        <relationship name="effects" toMany="YES" deletionRule="Cascade" destinationEntity="BMSReinforcementEffect" inverseName="reinforcement" inverseEntity="BMSReinforcementEffect" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BMSEvent" inverseName="reinforcement" inverseEntity="BMSEvent" syncable="YES"/>
+    </entity>
+    <entity name="BMSReinforcementEffect" representedClassName="BMSReinforcementEffect" syncable="YES">
+        <relationship name="attributes" toMany="YES" deletionRule="Cascade" destinationEntity="BMSReinforcementEffectAttribute" inverseName="effect" inverseEntity="BMSReinforcementEffectAttribute" syncable="YES"/>
+        <relationship name="reinforcement" maxCount="1" deletionRule="Nullify" destinationEntity="BMSReinforcement" inverseName="effects" inverseEntity="BMSReinforcement" syncable="YES"/>
+    </entity>
+    <entity name="BMSReinforcementEffectAttribute" representedClassName="BMSReinforcementEffectAttribute" syncable="YES">
+        <attribute name="key" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="effect" maxCount="1" deletionRule="Nullify" destinationEntity="BMSReinforcementEffect" inverseName="attributes" inverseEntity="BMSReinforcementEffect" syncable="YES"/>
+    </entity>
+    <entity name="BMSReport" representedClassName="BMSReport" syncable="YES">
+        <attribute name="actionName" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="events" toMany="YES" deletionRule="Deny" ordered="YES" destinationEntity="BMSEvent" inverseName="report" inverseEntity="BMSEvent" syncable="YES"/>
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="BMSUser" inverseName="reports" inverseEntity="BMSUser" syncable="YES"/>
+    </entity>
+    <entity name="BMSUser" representedClassName="BMSUser" syncable="YES">
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <relationship name="appState" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BMSAppState" inverseName="user" inverseEntity="BMSAppState" syncable="YES"/>
+        <relationship name="cartridges" toMany="YES" deletionRule="Cascade" destinationEntity="BMSCartridge" inverseName="user" inverseEntity="BMSCartridge" syncable="YES"/>
+        <relationship name="reports" toMany="YES" deletionRule="Cascade" destinationEntity="BMSReport" inverseName="user" inverseEntity="BMSReport" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BMSAppState" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="BMSCartridge" positionX="-1008" positionY="72" width="128" height="135"/>
+        <element name="BMSEvent" positionX="-200" positionY="72" width="128" height="135"/>
+        <element name="BMSReinforcement" positionX="-1188" positionY="144" width="128" height="135"/>
+        <element name="BMSReinforcementEffect" positionX="-963" positionY="216" width="128" height="75"/>
+        <element name="BMSReinforcementEffectAttribute" positionX="-981" positionY="198" width="128" height="90"/>
+        <element name="BMSReport" positionX="-416" positionY="72" width="128" height="105"/>
+        <element name="BMSUser" positionX="-632" positionY="72" width="128" height="105"/>
+    </elements>
+</model>

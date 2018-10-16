@@ -8,6 +8,7 @@
 
 import UIKit
 import OneSignal
+import Sesame
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,7 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // OneSignal.syncHashedEmail(userEmail)
         
         currentCountryCode = (Locale.current as NSLocale).object(forKey: NSLocale.Key.countryCode) as? String
-        
+
+        Sesame.shared = .init(
+            appId: SesameProperties.file.appId,
+            auth: SesameProperties.file.auth,
+            versionId: SesameProperties.file.versionId,
+            userId: SesameProperties.file.userId
+        )
+
         return true
     }
 
