@@ -16,6 +16,15 @@ DEPENDENCIES:
   - SwiftyJSON
   - Timepiece
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Charts
+    - OneSignal
+    - Planet
+    - SwiftyJSON
+    - Timepiece
+
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
@@ -26,4 +35,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3b5f12a5e91c8d5671d4639f2a6a7aa7cc32cb6d
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3
